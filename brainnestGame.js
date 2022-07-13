@@ -30,6 +30,7 @@ function playRound(playerSelection, computerSelection) {
 
 //Play game
 function game() {
+  console.clear();
   //Start a scoreboard
   let computerScore = 0;
   let playerScore = 0;
@@ -106,9 +107,6 @@ function game() {
   //Ask to play again
   const repeat = confirm("Wanna play again?");
   if (repeat) {
-    console.clear();
     game();
   }
 }
-
-game();
