@@ -8,8 +8,11 @@ function computerPlay() {
 }
 
 function playRound() {
-  player.selection = player.selection.toLowerCase();
-  if (player.selection == computer.selection) {
+  computer.selection = computerPlay();
+  player.selection = prompt("Choose yours: rock, paper, scissors");
+  player.selection && (player.selection = player.selection.toLowerCase());
+  if (!validatePromptInput(player.selection)) return;
+  if (player.selection.toLowerCase() == computer.selection) {
     return draws;
   } else if (
     (player.selection === "paper" && computer.selection === "scissors") ||
@@ -24,7 +27,7 @@ function playRound() {
 
 function validatePromptInput(input) {
   while (input || input == "") {
-    if (options.includes(input.toLowerCase())) {
+    if (options.includes(input)) {
       return true;
     } else {
       input = prompt("Invalid option, try again\nChoose yours: rock, paper, scissors");
@@ -40,13 +43,12 @@ function logScoreBoard(winner, round, lastRound) {
   console.log(`-------------Round ${round}-------------`);
   console.log("Player select: ", player.selection);
   console.log("Computer select: ", computer.selection);
-  console.log("Player score: ", player.score);
-  console.log("Computer score: ", computer.score);
-  console.log("Draws: ", draws.score);
   winner === draws
     ? console.log("There's a draw")
     : console.log(`The round winner is: ${winner.name}`);
-  console.log();
+  console.log("Player score: ", player.score);
+  console.log("Computer score: ", computer.score);
+  console.log("Draws: ", draws.score);
   if (lastRound) {
     console.log("---------Results----------");
     const gameWinner =
@@ -66,10 +68,8 @@ function game() {
   alert("Game has started, we will play 5 rounds");
   [computer.score, player.score, draws.score] = [0, 0, 0];
   for (let round = 1; round <= 5; round++) {
-    computer.selection = computerPlay();
-    player.selection = prompt("Choose yours: rock, paper, scissors");
-    if (!validatePromptInput(player.selection)) break;
     const winner = playRound();
+    if (!winner) break;
     ++winner.score;
     let lastRound = round == 5;
     logScoreBoard(winner, round, lastRound);
