@@ -7,14 +7,14 @@ function computerPlay() {
   return options[Math.floor(Math.random() * 3)];
 }
 
-function playRound(playerSelection, computerSelection) {
-  playerSelection = playerSelection.toLowerCase();
-  if (playerSelection == computerSelection) {
+function playRound() {
+  player.selection = player.selection.toLowerCase();
+  if (player.selection == computer.selection) {
     return draws;
   } else if (
-    (playerSelection === "paper" && computerSelection === "scissors") ||
-    (playerSelection === "scissors" && computerSelection === "rock") ||
-    (playerSelection === "rock" && computerSelection === "paper")
+    (player.selection === "paper" && computer.selection === "scissors") ||
+    (player.selection === "scissors" && computer.selection === "rock") ||
+    (player.selection === "rock" && computer.selection === "paper")
   ) {
     return computer;
   } else {
@@ -57,7 +57,7 @@ function logScoreBoard(winner, round, lastRound) {
         : draws;
     gameWinner == draws
       ? console.log("There is a draw")
-      : console.log(`THE GAME WINNER IS: ${winner.name.toUpperCase()}`);
+      : console.log(`THE GAME WINNER IS: ${gameWinner.name.toUpperCase()}`);
   }
 }
 
@@ -69,7 +69,7 @@ function game() {
     computer.selection = computerPlay();
     player.selection = prompt("Choose yours: rock, paper, scissors");
     if (!validatePromptInput(player.selection)) break;
-    const winner = playRound(player.selection, computer.selection);
+    const winner = playRound();
     ++winner.score;
     let lastRound = round == 5;
     logScoreBoard(winner, round, lastRound);
