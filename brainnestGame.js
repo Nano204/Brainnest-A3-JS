@@ -55,7 +55,10 @@ function game() {
   for (let i = 0; i < playTimes; i++) {
     console.log(`-------------Round ${i + 1}-------------`);
     const computerSelection = computerPlay();
-    let playerSelection = prompt("Choose yours: rock, paper,scissors");
+    let playerSelection = prompt(
+      "Choose yours: rock, paper, scissors"
+    ).toLowerCase();
+    console.log(playerSelection);
     //Set bucles to make player use a correct answer
     while (!options.includes(playerSelection)) {
       if (!playerSelection && playerSelection !== "") {
