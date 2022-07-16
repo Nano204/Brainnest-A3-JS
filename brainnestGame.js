@@ -27,7 +27,7 @@ function validatePromptInput(input) {
     if (options.includes(input.toLowerCase())) {
       return true;
     } else {
-      input = prompt("Invalid option, try again\nChoose yours: rock, paper,scissors");
+      input = prompt("Invalid option, try again\nChoose yours: rock, paper, scissors");
     }
   }
   if (!input) {
@@ -45,7 +45,7 @@ function logScoreBoard(winner, round, lastRound) {
   console.log("Draws: ", draws.score);
   winner === draws
     ? console.log("There's a draw")
-    : console.log(`The winner is: ${winner.name}`);
+    : console.log(`The round winner is: ${winner.name}`);
   console.log();
   if (lastRound) {
     console.log("---------Results----------");
