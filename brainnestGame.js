@@ -1,7 +1,7 @@
 const options = ["rock", "paper", "scissors"];
 const player = { name: "Player", selection: null, score: 0 };
 const computer = { name: "Computer", selection: null, score: 0 };
-const draws = 0;
+const draws = { score: 0 };
 
 function computerPlay() {
   return options[Math.floor(Math.random() * 3)];
@@ -42,18 +42,22 @@ function logScoreBoard(winner, round, lastRound) {
   console.log("Computer select: ", computer.selection);
   console.log("Player score: ", player.score);
   console.log("Computer score: ", computer.score);
-  console.log("Draws: ", draws);
-  winner === draws ? console.log("There's a draw") : console.log(`The winner is: ${winner.name}`);
+  console.log("Draws: ", draws.score);
+  winner === draws
+    ? console.log("There's a draw")
+    : console.log(`The winner is: ${winner.name}`);
   console.log();
   if (lastRound) {
     console.log("---------Results----------");
-    if (computer.score === player.score) {
-      console.log("The winner is: Computer");
-    } else if (computer.score < player.score) {
-      console.log("The winner is: Player");
-    } else {
-      console.log("There is a draw");
-    }
+    const gameWinner =
+      computer.score > player.score
+        ? computer
+        : computer.score < player.score
+        ? player
+        : draws;
+    gameWinner == draws
+      ? console.log("There is a draw")
+      : console.log(`THE GAME WINNER IS: ${winner.name.toUpperCase()}`);
   }
 }
 
