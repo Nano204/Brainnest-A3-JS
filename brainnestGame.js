@@ -24,10 +24,10 @@ function playRound(playerSelection, computerSelection) {
 
 function validatePromptInput(input) {
   while (input || input == "") {
-    if (!options.includes(input.toLowerCase())) {
-      input = prompt("Invalid option, try again\nChoose yours: rock, paper,scissors");
-    } else {
+    if (options.includes(input.toLowerCase())) {
       return true;
+    } else {
+      input = prompt("Invalid option, try again\nChoose yours: rock, paper,scissors");
     }
   }
   if (!input) {
