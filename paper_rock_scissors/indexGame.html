@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Brainnest Game</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Import fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Impor CSS -->
+    <link rel="stylesheet" href="styleGame.css" />
+  </head>
+  <body>
+    <h1 id="title">Let's plar Rock, paper or scissors!</h1>
+    <br />
+    <button id="startButton" class="gameButton">Start</button>
+    <!-- This container is hidden until the game starts -->
+    <div id="gameContainer">
+      <!-- Here is the information and control of player -->
+      <div id="playerSpace" class="contendant">
+        <h2 id="playerTitle">Player</h2>
+        <img
+          id="playerHand"
+          class="handChoose"
+          src="./images/paper.png"
+          alt="playersHand"
+        />
+        <button id="rockButton" class="gameButton">Rock</button>
+        <button id="paperButton" class="gameButton">Paper</button>
+        <button id="scissorButton" class="gameButton">Scissors</button>
+        <p id="playerText">Waiting...</p>
+      </div>
+      <!-- Here is the information and control of computer -->
+      <div id="computerSpace" class="contendant">
+        <h2 id="computerTitle">Computer</h2>
+        <img
+          id="computerHand"
+          class="handChoose"
+          src="./images/paper.png"
+          alt="computersHand"
+        />
+        <p id="computerText">Waiting...</p>
+      </div>
+      <!-- Here is the score board -->
+      <div id="scoreBoard">
+        <div id="announcements">
+          <h2 id="roundCount">Start!</h2>
+          <p id="winnerAnnouncer">This round winner is:</p>
+          <h2 id="winner"></h2>
+          <p id="winningComment">First winning 5 rounds wins game</p>
+        </div>
+        <p id="computerScore">Computer score: 0</p>
+        <p id="playerScore">Player score: 0</p>
+        <p id="drawScore">Draws: 0</p>
+        <h2 id="gameWinnerAnnouncer">The game winner is:</h2>
+        <h2 id="gameWinner"></h2>
+        <button id="nextRoundButton" class="gameButton">Next Round</button>
+        <button id="restartButton" class="gameButton">Restart</button>
+      </div>
+    </div>
+    <script type="text/javascript" src="./game.js"></script>
+  </body>
+</html>

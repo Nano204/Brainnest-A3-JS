@@ -1,0 +1,59 @@
+#buttonPad {
+  display: flex;
+  max-width: 1000px;
+  margin: 0;
+}
+.numbers-container,
+.operators-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #5f666c;
+  padding: 10px;
+}
+
+.numbers-container {
+  grid-template-columns: auto auto auto;
+  width: 70%;
+}
+
+.operators-container {
+  grid-template-columns: auto;
+  width: 30%;
+}
+
+.number,
+.operator,
+.finisher {
+  font-family: "Press Start 2P", cursive;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 3px groove rgb(138, 138, 138);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 1rem;
+  margin: 0.2rem;
+  cursor: pointer;
+}
+.number:active,
+.operator:active,
+.finisher:active {
+  border-style: ridge;
+}
+.operator,
+.finisher {
+  background-color: rgba(238, 103, 7, 0.8);
+  border-color: rgba(197, 86, 6, 0.8);
+  color: white;
+}
+
+#display {
+  box-sizing: border-box;
+  font-family: "Press Start 2P", cursive;
+  background-color: black;
+  color: white;
+  font-size: 70px;
+  max-width: 1000px;
+  margin: 0;
+  padding: 1rem;
+  text-align: end;
+}

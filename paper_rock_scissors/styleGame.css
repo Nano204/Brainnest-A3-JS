@@ -1,0 +1,84 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  background-color: rgb(37, 37, 37);
+  color: white;
+  font-size: 1.2rem;
+}
+
+h1 {
+  color: greenyellow;
+}
+
+.gameButton {
+  background-color: transparent;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.2rem;
+  border-radius: 1.2rem;
+  color: white;
+  cursor: pointer;
+  border: 2rem, solid, white;
+  box-shadow: 0px 0px 7px 2px rgb(133, 133, 133);
+}
+
+#cumputerText,
+.gameButton {
+  padding: 0.8rem;
+  margin: 1rem;
+  width: 15rem;
+  max-width: 100%;
+  text-align: center;
+}
+
+.gameButton:hover {
+  color: aqua;
+  font-size: 1.5rem;
+  transition: all 0.3s;
+}
+
+#startButton {
+  display: none;
+}
+
+.contendant,
+#scoreBoard {
+  align-items: center;
+  box-sizing: border-box;
+  width: 30%;
+  min-width: 20rem;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.handChoose {
+  max-height: 18rem;
+  height: 50%;
+}
+
+#winningComment {
+  font-size: 0.8rem;
+  font-weight: 100;
+}
+
+#playerTitle {
+  color: aqua;
+}
+
+#computerTitle {
+  color: orange;
+}
+
+#roundCount,
+#gameWinnerAnnouncer {
+  color: greenyellow;
+}
+
+#playerText,
+#restartButton,
+#nextRoundButton,
+#winnerAnnouncer,
+#winner,
+#gameWinnerAnnouncer,
+#gameWinner {
+  display: none;
+}

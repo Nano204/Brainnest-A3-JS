@@ -7,16 +7,23 @@ body {
   font-size: 1.2rem;
 }
 
-h2 {
+h1 {
   color: greenyellow;
 }
 
-div {
-  display: flex;
-  justify-content: center;
+a {
+  text-decoration: none;
+  color: aqua;
 }
 
-ol {
-  text-align: left;
-  line-height: 1.5;
+a:hover {
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  color: fuchsia;
+}
+
+a:focus {
+  font-size: 1.5rem;
+  transition: all 0.3s;
+  color: fuchsia;
 }
