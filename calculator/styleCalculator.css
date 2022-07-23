@@ -1,3 +1,9 @@
+body {
+  text-align: center;
+  background-color: rgb(37, 37, 37);
+  margin: 10%;
+}
+
 #buttonPad {
   display: flex;
   max-width: 1000px;

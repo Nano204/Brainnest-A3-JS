@@ -19,14 +19,10 @@ function operate(a, b, operator) {
   return operator(a, b);
 }
 
-function clearDisplay() {
-  display.innerText = 0;
-}
-
 function clearValues() {
   while (operationValues.length) operationValues.pop();
   actualValue = 0;
-  clearDisplay();
+  display.innerText = 0;
   console.log(operationValues);
 }
 
@@ -41,6 +37,7 @@ const numberButtons = Array.from(
 );
 numberButtons.map((button) => {
   button.addEventListener("click", (event) => {
+    if (event.target.innerText == "." && actualValue.includes(".")) return;
     actualValue = actualValue + event.target.innerText;
     display.innerText =
       display.innerText == 0
